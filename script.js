@@ -14,6 +14,13 @@ const fetchData = async() => {
     for(i = 0; i < data.results.length; i++) {
         gridItems[i] = document.createElement('div');
         gridItems[i].style.backgroundImage = `url(${data.results[i].urls.raw})`;
+
+        if(data.results[i].width > data.results[i].height) {
+            gridItems[i].classList.add('column-span');
+        } else if(data.results[i].width < data.results[i].height) {
+            gridItems[i].classList.add('row-span');
+        }
+
         fragment.appendChild(gridItems[i]);
     }
 
