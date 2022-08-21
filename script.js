@@ -1,11 +1,12 @@
 const root = document.getElementById('root');
+const input = document.getElementById('input');
 
 const url = 'https://api.unsplash.com';
-const query = 'london';
 const accessKey = config.ACCESS_KEY;
 
 const fetchData = async() => {
-    const response = await fetch(`${url}/search/photos?query=${query}&client_id=${accessKey}`);
+    const inputValue = input.value;
+    const response = await fetch(`${url}/search/photos?query=${inputValue}&client_id=${accessKey}`);
     const data = await response.json();
 
     let gridItems = [];
@@ -27,4 +28,8 @@ const fetchData = async() => {
     root.appendChild(fragment);
 };
 
-fetchData();
+window.addEventListener('keydown', event => {
+    if(event.code == 'Enter') {
+        fetchData();
+    }
+});
