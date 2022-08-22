@@ -5,28 +5,34 @@ const url = 'https://api.unsplash.com';
 const accessKey = config.ACCESS_KEY;
 
 const fetchData = async() => {
-    const inputValue = input.value;
-    const response = await fetch(`${url}/search/photos?query=${inputValue}&client_id=${accessKey}`);
+
+    if(input.value == '') input.value = 'London';
+
+    const response = await fetch(`${url}/search/photos?query=${input.value}&client_id=${accessKey}`);
     const data = await response.json();
 
-    let gridItems = [];
+    let images = [];
     let fragment = document.createDocumentFragment();
 
     for(i = 0; i < data.results.length; i++) {
-        gridItems[i] = document.createElement('div');
-        gridItems[i].style.backgroundImage = `url(${data.results[i].urls.raw})`;
+        images[i] = document.createElement('div');
+        images[i].style.backgroundImage = `url(${data.results[i].urls.raw})`;
 
         if(data.results[i].width > data.results[i].height) {
-            gridItems[i].classList.add('column-span');
+            images[i].classList.add('column-span');
         } else if(data.results[i].width < data.results[i].height) {
-            gridItems[i].classList.add('row-span');
+            images[i].classList.add('row-span');
         }
 
-        fragment.appendChild(gridItems[i]);
+        fragment.appendChild(images[i]);
     }
 
     root.appendChild(fragment);
 };
+
+window.addEventListener('load', () => {
+    fetchData();
+});
 
 window.addEventListener('keydown', event => {
     if(event.code == 'Enter') {
