@@ -5,6 +5,7 @@ const url = 'https://api.unsplash.com';
 const accessKey = config.ACCESS_KEY;
 
 const fetchData = async() => {
+    root.replaceChildren();
 
     if(input.value == '') input.value = 'London';
 
