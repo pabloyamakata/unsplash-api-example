@@ -6,7 +6,7 @@
     box-sizing: border-box;
     /* Works on Firefox */
     scrollbar-width: thin;
-    scrollbar-color: #515864 #282c34;
+    scrollbar-color: #989faa #e1e5ec;
 }
 
 /* Works on Chrome, Edge and Safari */
@@ -15,17 +15,17 @@
 }
 
 *::-webkit-scrollbar-track {
-    background-color: #282c34;
+    background-color: #e1e5ec;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #515864;
-    border: 3px solid #282c34;
+    background-color: #989faa;
+    border: 3px solid #e1e5ec;
     border-radius: 20px;
 }
 
 body {
-    background-color: #282c34;
+    background-color: #e1e5ec;
     font-family: 'Roboto', sans-serif;
     color: #FAFAFA;
 }
@@ -36,8 +36,9 @@ header {
     align-items: center;
     flex-wrap: wrap;
     padding: 20px 20px;
-    background-color: #ff8e27;
+    background-color: #e1e5ec;
     color: #1d2027;
+    border-bottom: 5px solid #ff8e27;
 }
 
 header .title-container {
@@ -48,6 +49,7 @@ header .title-container {
 
 header .title-container .material-icons {
     font-size: 30px;
+    color: #ff8e27;
 }
 
 header .title-container h1 {
@@ -83,7 +85,7 @@ header .input-container .material-icons {
     grid-auto-rows: minmax(300px, auto);
     grid-auto-flow: dense;
     /* 100vh - header height */
-    height: calc(100vh - 73px);
+    height: calc(100vh - 78px);
     padding: 20px;
     gap: 20px;
     overflow-y: auto;
