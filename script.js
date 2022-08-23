@@ -12,23 +12,27 @@ const fetchData = async() => {
     const response = await fetch(`${url}/search/photos?query=${input.value}&client_id=${accessKey}`);
     const data = await response.json();
 
-    let images = [];
-    let fragment = document.createDocumentFragment();
+    if(data.results.length > 0) {
+        let images = [];
+        let fragment = document.createDocumentFragment();
 
-    for(i = 0; i < data.results.length; i++) {
-        images[i] = document.createElement('div');
-        images[i].style.backgroundImage = `url(${data.results[i].urls.raw})`;
-
-        if(data.results[i].width > data.results[i].height) {
-            images[i].classList.add('column-span');
-        } else if(data.results[i].width < data.results[i].height) {
-            images[i].classList.add('row-span');
+        for(i = 0; i < data.results.length; i++) {
+            images[i] = document.createElement('div');
+            images[i].style.backgroundImage = `url(${data.results[i].urls.raw})`;
+    
+            if(data.results[i].width > data.results[i].height) {
+                images[i].classList.add('column-span');
+            } else if(data.results[i].width < data.results[i].height) {
+                images[i].classList.add('row-span');
+            }
+    
+            fragment.appendChild(images[i]);
         }
 
-        fragment.appendChild(images[i]);
+        root.appendChild(fragment);
+    } else {
+        alert('0 results!');
     }
-
-    root.appendChild(fragment);
 };
 
 window.addEventListener('load', () => {
