@@ -66,7 +66,7 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('keydown', event => {
-    if(event.code == 'Enter') {
+    if(event.code == 'Enter' && input == document.activeElement) {
         fetchData();
     }
 });
