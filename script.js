@@ -13,6 +13,10 @@ const getRandomItem = array => {
     return item;
 };
 
+const resetGridStyles = () => {
+    root.style.gridTemplateColumns = 'repeat(auto-fill, minmax(200px, 1fr))';
+};
+
 // Intersection Observer API
 const options = {
     root: null,
@@ -64,7 +68,17 @@ const fetchData = async() => {
             observer.observe(target);
         });
     } else {
-        alert('0 results!');
+        let errorContainer = document.createElement('div');
+        let errorMessage = document.createElement('span');
+
+        errorContainer.setAttribute('class', 'error-container');
+        errorMessage.setAttribute('class', 'error-message');
+        errorMessage.textContent = `Oops! There's been an error...`;
+
+        errorContainer.appendChild(errorMessage);
+
+        root.style.gridTemplateColumns = '100%';
+        root.appendChild(errorContainer);
     }
 };
 
@@ -74,6 +88,7 @@ window.addEventListener('load', () => {
 
 window.addEventListener('keydown', event => {
     if(event.code == 'Enter' && input == document.activeElement) {
+        resetGridStyles();
         fetchData();
     }
 });
