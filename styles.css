@@ -89,6 +89,17 @@ header .input-container .material-icons {
     transform: scale(1.02);
 }
 
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message {
+    font-size: 30px;
+    color: #1d2027;
+}
+
 .column-span {
     grid-column: span 2;
 }
