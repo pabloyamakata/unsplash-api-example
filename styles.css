@@ -76,15 +76,16 @@ header .input-container .material-icons {
     overflow-y: auto;
 }
 
-#root div {
+#root .image {
     background-position: center;
     background-size: cover;
+    background-color: #b3bac5;
     border-radius: 3px;
     transition: 300ms transform ease-in-out;
     cursor: pointer;
 }
 
-#root div:hover {
+#root .image:hover {
     transform: scale(1.02);
 }
 
