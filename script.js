@@ -6,6 +6,13 @@ const accessKey = config.ACCESS_KEY;
 
 let urls = [];
 
+const getRandomItem = array => {
+    let index = Math.floor(Math.random() * (array.length));
+    let item = array[index];
+    array.splice(index, 1);
+    return item;
+};
+
 // Intersection Observer API
 const options = {
     root: null,
@@ -16,7 +23,7 @@ const options = {
 let callback = (entries, observer) => {
     entries.forEach(entry => {
         if(entry.isIntersecting) {
-            entry.target.style.backgroundImage = `url(${urls[0]})`;
+            entry.target.style.backgroundImage = `url(${getRandomItem(urls)}})`;
             observer.unobserve(entry.target);
         }
     });
