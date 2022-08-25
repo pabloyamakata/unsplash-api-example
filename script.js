@@ -17,6 +17,11 @@ const resetGridStyles = () => {
     root.style.gridTemplateColumns = 'repeat(auto-fill, minmax(200px, 1fr))';
 };
 
+const removeModal = () => {
+    document.body.removeChild(document.querySelector('.modal'));
+    closeIcon.removeEventListener('click', removeModal);
+};
+
 // Intersection Observer API
 const options = {
     root: null,
@@ -27,7 +32,29 @@ const options = {
 let callback = (entries, observer) => {
     entries.forEach(entry => {
         if(entry.isIntersecting) {
-            entry.target.style.backgroundImage = `url(${getRandomItem(urls)}})`;
+            let image = getRandomItem(urls);
+            entry.target.style.backgroundImage = `url(${image}})`;
+
+            entry.target.addEventListener('click', () => {
+
+                if(document.querySelector('.modal')) {
+                    document.body.removeChild(document.querySelector('.modal'));
+                }
+
+                let modal = document.createElement('div');
+                modal.setAttribute('class', 'modal');
+                modal.style.backgroundImage = `url(${image})`;
+                
+                let closeIcon = document.createElement('span');
+                closeIcon.setAttribute('class', 'material-icons material-icons-round');
+                closeIcon.textContent = 'close';
+                closeIcon.addEventListener('click', removeModal);
+
+                modal.appendChild(closeIcon);
+
+                document.body.appendChild(modal);
+            });
+
             observer.unobserve(entry.target);
         }
     });
