@@ -107,3 +107,23 @@ header .input-container .material-icons {
 .row-span {
     grid-row: span 2;
 }
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vh;
+    background-position: center;
+    background-size: cover;
+    border-radius: 7px;
+    box-shadow: 0 0 50px 200px rgba(0, 0, 0, .5);
+}
+
+.modal .material-icons {
+    float: right;
+    margin-top: 7px;
+    margin-right: 7px;
+    cursor: pointer;
+}
