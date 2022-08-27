@@ -113,12 +113,20 @@ header .input-container .material-icons {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80vw;
-    height: 80vh;
     background-position: center;
     background-size: cover;
     border-radius: 7px;
-    box-shadow: 0 0 50px 200px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 50px 500px rgba(0, 0, 0, .5);
+}
+
+.modal-landscape {
+    width: 900px;
+    height: 500px;
+}
+
+.modal-portrait {
+    width: 300px;
+    height: 600px;
 }
 
 .modal .material-icons {
