@@ -5,7 +5,7 @@ import { getAllUrls } from "./url.js";
 export const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.5
+    threshold: 0.1
 };
 
 export const observerCallback = (entries, observer) => {
