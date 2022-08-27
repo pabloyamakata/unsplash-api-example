@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('keydown', event => {
-    if(event.code == 'Enter' && document.getElementById('input') == document.activeElement) {
+    if(event.code == 'Enter' && input == document.activeElement) {
         resetGridColumns();
         fetchData();
     }

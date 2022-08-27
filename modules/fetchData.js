@@ -1,4 +1,5 @@
-import { saveUrl } from "./url.js";
+import config from './config.js';
+import { deleteUrls, saveUrl } from "./url.js";
 import { observerCallback, observerOptions } from "./intersectionObserver.js";
 
 const root = document.getElementById('root');
@@ -10,6 +11,7 @@ const observer = new IntersectionObserver(observerCallback, observerOptions);
 
 const fetchData = async() => {
     root.replaceChildren();
+    deleteUrls();
 
     if(input.value == '') input.value = 'London';
 
