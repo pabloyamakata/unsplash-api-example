@@ -23,7 +23,13 @@ export const observerCallback = (entries, observer) => {
                 let modal = document.createElement('div');
                 modal.setAttribute('class', 'modal');
                 modal.style.backgroundImage = `url(${image})`;
-                
+
+                if(entry.target.classList.contains('column-span')) {
+                    modal.classList.add('modal-landscape');
+                } else if(entry.target.classList.contains('row-span')) {
+                    modal.classList.add('modal-portrait');
+                }
+
                 let closeIcon = document.createElement('span');
                 closeIcon.setAttribute('class', 'material-icons material-icons-round');
                 closeIcon.textContent = 'close';
