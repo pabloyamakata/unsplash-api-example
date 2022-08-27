@@ -7,3 +7,7 @@ export const saveUrl = url => {
 export const getAllUrls = () => {
     return urls;
 };
+
+export const deleteUrls = () => {
+    urls = [];
+};
