@@ -136,6 +136,14 @@ header .input-container .material-icons {
     cursor: pointer;
 }
 
+@media all and (max-width: 459px) {
+    
+    .row-span {
+        grid-row: span 0;
+        grid-column: span 2;
+    }
+}
+
 @media all and (max-width: 496px) {
     
     header {
