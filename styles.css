@@ -135,3 +135,15 @@ header .input-container .material-icons {
     margin-right: 7px;
     cursor: pointer;
 }
+
+@media all and (max-width: 496px) {
+    
+    header {
+        justify-content: center;
+        padding: 20px;
+    }
+
+    header .input-container {
+        margin-top: 7px;
+    }
+}
