@@ -116,7 +116,7 @@ header .input-container .material-icons {
     background-position: center;
     background-size: cover;
     border-radius: 7px;
-    box-shadow: 0 0 50px 500px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 50px 1000px rgba(0, 0, 0, .5);
 }
 
 .modal-landscape {
