@@ -25,6 +25,7 @@ const fetchData = async() => {
         for(let i = 0; i < data.results.length; i++) {
             images[i] = document.createElement('div');
             images[i].setAttribute('class', 'image');
+            images[i].classList.add(`${i}`);
             saveUrl(data.results[i].urls.raw);
 
             if(data.results[i].width > data.results[i].height) {
