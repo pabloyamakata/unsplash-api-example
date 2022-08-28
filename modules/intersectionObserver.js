@@ -1,4 +1,3 @@
-import getRandomItem from "./getRandomItem.js";
 import removeModal from "./removeModal.js";
 import { getAllUrls } from "./url.js";
 
@@ -11,7 +10,7 @@ export const observerOptions = {
 export const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
         if(entry.isIntersecting) {
-            let image = getRandomItem(getAllUrls());
+            let image = getAllUrls()[parseInt(entry.target.classList.item(1))];
             entry.target.style.backgroundImage = `url(${image}})`;
 
             entry.target.addEventListener('click', () => {
