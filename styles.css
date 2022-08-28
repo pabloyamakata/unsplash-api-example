@@ -133,7 +133,9 @@ header .input-container .material-icons {
     float: right;
     margin-top: 7px;
     margin-right: 7px;
+    font-size: 27px;
     cursor: pointer;
+    mix-blend-mode: difference;
 }
 
 @media all and (max-width: 459px) {
