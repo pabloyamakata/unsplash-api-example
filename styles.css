@@ -139,7 +139,6 @@ header .input-container .material-icons {
 @media all and (max-width: 459px) {
     
     .row-span {
-        grid-row: span 0;
         grid-column: span 2;
     }
 }
