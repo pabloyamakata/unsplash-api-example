@@ -133,6 +133,13 @@ header .input-container .material-icons {
     max-height: 600px;
 }
 
+.modal-square {
+    width: calc(100vw - 20px);
+    height: calc(100vw - 20px);
+    max-width: 500px;
+    max-height: 500px;
+}
+
 .modal .material-icons {
     float: right;
     margin-top: 7px;
@@ -145,6 +152,10 @@ header .input-container .material-icons {
 @media all and (max-width: 459px) {
     
     .row-span {
+        grid-column: span 2;
+    }
+
+    .no-span {
         grid-column: span 2;
     }
 }
