@@ -32,6 +32,8 @@ const fetchData = async() => {
                 images[i].classList.add('column-span');
             } else if(data.results[i].width < data.results[i].height) {
                 images[i].classList.add('row-span');
+            } else if(data.results[i].width == data.results[i].height) {
+                images[i].classList.add('no-span');
             }
     
             fragment.appendChild(images[i]);
