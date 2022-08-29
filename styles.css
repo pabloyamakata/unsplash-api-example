@@ -120,13 +120,17 @@ header .input-container .material-icons {
 }
 
 .modal-landscape {
-    width: 900px;
-    height: 500px;
+    width: calc(100vw - 20px);
+    height: calc((100vw - 20px) * 0.7);
+    max-width: 900px;
+    max-height: 500px;
 }
 
 .modal-portrait {
-    width: 300px;
-    height: 600px;
+    width: calc(100vw - 20px);
+    height: calc((100vw - 20px) * 2);
+    max-width: 300px;
+    max-height: 600px;
 }
 
 .modal .material-icons {
