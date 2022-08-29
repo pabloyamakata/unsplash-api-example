@@ -27,6 +27,8 @@ export const observerCallback = (entries, observer) => {
                     modal.classList.add('modal-landscape');
                 } else if(entry.target.classList.contains('row-span')) {
                     modal.classList.add('modal-portrait');
+                } else if(entry.target.classList.contains('no-span')) {
+                    modal.classList.add('modal-square');
                 }
 
                 let closeIcon = document.createElement('span');
